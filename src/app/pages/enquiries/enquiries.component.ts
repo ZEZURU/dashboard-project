@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject ,} from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-enquiries',
