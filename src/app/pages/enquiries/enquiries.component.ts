@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject ,} from '@angular/core';
 
 @Component({
   selector: 'app-enquiries',
@@ -8,5 +9,24 @@ import { Component } from '@angular/core';
   styleUrl: './enquiries.component.css'
 })
 export class EnquiriesComponent {
+
+
+  allEnquiries: any [] = [];
+
+
+  constructor(private http: HttpClient) {
+     this.getAllEnquiries();
+
+  }
+
+  getAllEnquiries(){
+    this.http.get("https://fsboafrica.com/api/enquiries/all").subscribe((res:any)=>{
+
+      this.allEnquiries = res.data;
+
+    })
+  }
+
+
 
 }
