@@ -13,6 +13,8 @@ export class EnquiriesComponent {
 
 
   allEnquiries: any [] = [];
+$index: any;
+item: any;
 
 
   constructor(private http: HttpClient) {
